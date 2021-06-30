@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block contents %}
+{% for product in object_list %}
+    {{ product.name }}: {{ product.price }}
+{% endfor %}
+{% endblock %}
