@@ -1,6 +1,6 @@
 from enum import auto
 from django.db import models
-
+from django_quill.fields import QuillField
 # Create your models here.
 
 
@@ -18,3 +18,7 @@ class Product(models.Model):
         db_table = 'NewProject_product'
         verbose_name = 'PRODUCT'
         verbose_name_plural = 'PRODUCT'
+
+
+class QuillPost(models.Model):
+    content = QuillField()
