@@ -4,7 +4,9 @@
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 <script>
     $(document).ready(function() {
-        $('#id_description').summernote();
+        $('#id_description').summernote({
+            height: 300
+        });
     });
   </script>
 {% endblock %}

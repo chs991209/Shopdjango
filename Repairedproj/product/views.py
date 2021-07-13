@@ -19,7 +19,7 @@ class ProductCreate(FormView):
     success_url = '/product/'
 
 
-class ProductDetail (DetailView):
+class ProductDetail(DetailView):
     template_name = 'product_detail.html'
     queryset = Product.objects.all()
     context_object_name = 'product'
