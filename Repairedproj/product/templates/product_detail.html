@@ -14,7 +14,8 @@
                             <label for="{{  field.id_for_label  }}">{{ field.label }}</label>
                             {% endifnotequal %}
                             <input type="{{ field.field.widget.input_type }}" class="form-control" id = "{{  field.id_for_label  }}"
-                                   placeholder="{{   field.label }}" name="{{   field.name  }}" />
+                                   placeholder="{{   field.label }}" name="{{   field.name  }}"
+                                   value="{% ifequal field.name 'product' %}{{product.id}}{% endifequal %}"/>
                         </div>
                         {% if field.errors %}
                         <span style="color: red">{{  field.errors  }}</span>

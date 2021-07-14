@@ -29,8 +29,6 @@ L
 Repairedproj/order/models.py,b/7/b7c3532e0492304068ba11d4d7607c7eb9cef5a0
 P
  Repairedproj/product/__init__.py,7/e/7e3febb8f992f326e69d5056b8cbe9da9d5700a7
-[
-+Repairedproj/product/templates/product.html,4/5/45bbfee206c262cea0508f802882b89734391277
 Z
 *Repairedproj/customer/templates/index.html,c/6/c6689fb65f053a1480eee0a9f6cdc3bad7aebbc7
 ]
@@ -48,3 +46,9 @@ N
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
+d
+4Repairedproj/product/templates/register_product.html,4/0/40defd226d55e5ef7331ad2f81ef2ce90e5b1275
+N
+Repairedproj/customer/forms.py,8/a/8a2e096462e759e816b36a59d6b9fe8e7288172d
+M
+Repairedproj/product/views.py,f/d/fd3aeb3efdb1ad8944b609b0a80bc353e7ef7e7b
