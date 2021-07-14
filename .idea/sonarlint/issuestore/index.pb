@@ -25,8 +25,6 @@ L
 Repairedproj/product/apps.py,0/4/0477bad351afbc1a0284d7b4d864c4906425e12a
 Q
 !Repairedproj/Repairedproj/wsgi.py,8/4/840f6d8e26244cf9bd547581597666566761412c
-K
-Repairedproj/order/views.py,5/d/5d8078a2d196974f8a3a662b57ae6e9d80eb1dcd
 L
 Repairedproj/order/models.py,b/7/b7c3532e0492304068ba11d4d7607c7eb9cef5a0
 P
@@ -50,23 +48,3 @@ N
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
-b
-2Repairedproj/product/templates/product_detail.html,b/c/bc6c52ee05a680eaee3d9484834b703b6a093598
-d
-4Repairedproj/product/templates/register_product.html,4/0/40defd226d55e5ef7331ad2f81ef2ce90e5b1275
-O
-Repairedproj/customer/models.py,a/5/a56505aa8bf3082807bc6b4e7f7bdde7b77ac3ba
-U
-%Repairedproj/Repairedproj/settings.py,a/0/a04a74135745c6da881cf63e8bd259857bb01b6f
-N
-Repairedproj/customer/forms.py,8/a/8a2e096462e759e816b36a59d6b9fe8e7288172d
-Q
-!Repairedproj/Repairedproj/urls.py,1/d/1dc92f9fc013bf3194d88e555b846a6d166aa956
-M
-Repairedproj/product/forms.py,6/5/65d01ff1afd33c9545a9478eba96d39612e9a301
-j
-:lib/python3.9/site-packages/django/conf/global_settings.py,a/f/af175869a1663c7378438ee73fa51b2f393864d8
-M
-Repairedproj/product/views.py,f/d/fd3aeb3efdb1ad8944b609b0a80bc353e7ef7e7b
-N
-Repairedproj/customer/views.py,e/e/ee8faca6764107b628d9b54c8ff955c482e87341

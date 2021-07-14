@@ -1,8 +1,10 @@
+from order.models import Order
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import FormView
 from .models import Product
 from .forms import RegisterForm
+from order.forms import RegisterForm as OrderForm
 
 # Create your views here.
 
@@ -23,3 +25,8 @@ class ProductDetail(DetailView):
     template_name = 'product_detail.html'
     queryset = Product.objects.all()
     context_object_name = 'product'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = OrderForm()
+        return context

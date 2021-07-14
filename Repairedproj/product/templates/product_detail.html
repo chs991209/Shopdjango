@@ -6,10 +6,32 @@
             <div class="card" style="width: 100%"></div>
             <div class="card-body">{{ product.name }}</div>
             <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <form method="POST" action="/order/create/">
+                        {% for field in form %}
+                        <div class="form-group">
+                            {% ifnotequal field.name 'product' %}
+                            <label for="{{  field.id_for_label  }}">{{ field.label }}</label>
+                            {% endifnotequal %}
+                            <input type="{{ field.field.widget.input_type }}" class="form-control" id = "{{  field.id_for_label  }}"
+                                   placeholder="{{   field.label }}" name="{{   field.name  }}" />
+                        </div>
+                        {% if field.errors %}
+                        <span style="color: red">{{  field.errors  }}</span>
+                        {% endif %}
+                        {% endfor %}
+                        <button type="submit" class="btn btn-primary">ORDER</button>
+                    </form>
+                </li>
                 <li class="list-group-item">가격: {{ product.price|intcomma }} $</li>
                 <li class="list-group-item">등록 날짜: {{ product.registered_date|date:'Y/m/d H:i' }}</li>
                 <li class="list-group-item">상품 설명: {{ product.product_description }}</li>
             </ul>
         </div>
     </div>
+        <div class="row">
+            <div class="col-12">
+                <a href="/product/">목록</a>
+            </div>
+        </div>
 {% endblock %}
