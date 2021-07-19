@@ -46,5 +46,3 @@ O
 Repairedproj/customer/models.py,a/5/a56505aa8bf3082807bc6b4e7f7bdde7b77ac3ba
 U
 %Repairedproj/Repairedproj/settings.py,a/0/a04a74135745c6da881cf63e8bd259857bb01b6f
-K
-Repairedproj/order/views.py,5/d/5d8078a2d196974f8a3a662b57ae6e9d80eb1dcd
