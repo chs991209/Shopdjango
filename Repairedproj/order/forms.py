@@ -34,3 +34,6 @@ class RegisterForm(forms.Form):
                 customer=Customer.objects.get(email=customer)
             )
             order.save()
+        else:
+            self.add_error('quantity', 'No Data')
+            self.add_error('product', 'No Data')
