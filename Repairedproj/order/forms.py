@@ -1,6 +1,8 @@
+import requests
 from django import forms
 from .models import Order
-
+from customer.models import Customer
+from product.models import Product
 
 class RegisterForm(forms.Form):
 
@@ -23,3 +25,12 @@ class RegisterForm(forms.Form):
         cleaned_data = super().clean()
         quantity = cleaned_data.get('quantity')
         product = cleaned_data.get('product')
+        customer = self.request.sesion.get('user')
+
+        if quantity and product and customer:
+            order = Order(
+                quantity=quantity,
+                product=Product.objects.get(pk=product),
+                customer=Customer.objects.get(email=customer)
+            )
+            order.save()
