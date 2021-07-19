@@ -5,12 +5,6 @@ Q
 !Repairedproj/Repairedproj/asgi.py,1/2/12e469b7bd5cf5825d67f90b8575aa58186834ae
 K
 Repairedproj/order/tests.py,0/1/01931b70a1b975d5a46ef2c660bd7a3560621710
-_
-/Repairedproj/product/migrations/0001_initial.py,f/b/fbc20167e4e95013535e997e19c4a378efe046c1
-[
-+Repairedproj/product/migrations/__init__.py,1/d/1d4cd9474b6220d6a1bf0e20c8965802551943ee
-K
-Repairedproj/order/admin.py,d/2/d2be24a9dd04958c53a8cd66fdbf513082d31e29
 J
 Repairedproj/order/apps.py,0/8/08394e51345ce043b64bb2d6cf3b58948b9d4113
 N
@@ -41,14 +35,16 @@ Y
 )Repairedproj/customer/templates/base.html,c/7/c7d3e37116142dff021afe07b9eb2899996b0510
 Q
 !Repairedproj/customer/__init__.py,1/2/1288f8d41b32cf7d06d3efd1ae80b707f9cffd51
-N
-Repairedproj/product/models.py,0/b/0b735d600e9ad1691833f8ba306b3c3ac59469c7
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
-d
-4Repairedproj/product/templates/register_product.html,4/0/40defd226d55e5ef7331ad2f81ef2ce90e5b1275
 N
 Repairedproj/customer/forms.py,8/a/8a2e096462e759e816b36a59d6b9fe8e7288172d
-M
-Repairedproj/product/views.py,f/d/fd3aeb3efdb1ad8944b609b0a80bc353e7ef7e7b
+j
+:lib/python3.9/site-packages/django/conf/global_settings.py,a/f/af175869a1663c7378438ee73fa51b2f393864d8
+O
+Repairedproj/customer/models.py,a/5/a56505aa8bf3082807bc6b4e7f7bdde7b77ac3ba
+U
+%Repairedproj/Repairedproj/settings.py,a/0/a04a74135745c6da881cf63e8bd259857bb01b6f
+K
+Repairedproj/order/views.py,5/d/5d8078a2d196974f8a3a662b57ae6e9d80eb1dcd
