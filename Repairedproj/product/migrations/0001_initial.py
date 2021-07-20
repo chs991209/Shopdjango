@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=256, verbose_name='Prod_NAME')),
                 ('price', models.IntegerField(verbose_name='Prod_PRICE')),
-                ('product_description', models.TextField(verbose_name='Prod_DESCRIPTION')),
+                ('description', models.TextField(verbose_name='Prod_DESCRIPTION')),
                 ('stock', models.IntegerField(verbose_name='Prod_STOCK')),
                 ('registered_date', models.DateTimeField(auto_now_add=True, verbose_name='ProdREGISTERED_DATE')),
             ],

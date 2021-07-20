@@ -9,7 +9,7 @@ class OrderCreate(FormView):
     success_url = '/product/'
 
     def form_invalid(self, form):
-        return redirect('/product/' + form.product)
+        return redirect('/product/' + str(form.product))
 
     def get_form_kwargs(self, **kwargs):
         kw = super().get_form_kwargs(**kwargs)
