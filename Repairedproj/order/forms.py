@@ -39,6 +39,7 @@ def clean(self):
         )
         order.save()
         product.stock -= quantity
+        product.save()
     else:
         self.add_error('quantity', 'No Data')
         self.add_error('product', 'No Data')
