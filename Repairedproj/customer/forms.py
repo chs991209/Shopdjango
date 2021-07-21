@@ -18,12 +18,11 @@ class RegisterForm(forms.Form):
         },
         widget=forms.PasswordInput, label='Password'
     )
-
+    re_password = forms.CharField(
         error_messages={
             'required': 'Enter Password'
         },
-        widget=forms.PasswordInput, label='Password Check'
-    )
+        widget=forms.PasswordInput, label='Password Check')
 
     def clean(self):
         cleaned_data = super().clean()
