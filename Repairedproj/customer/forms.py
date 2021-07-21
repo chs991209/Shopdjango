@@ -1,6 +1,8 @@
 from django import forms
 from .models import Customer
 from django.contrib.auth.hashers import check_password, make_password
+from customer.models import Customer
+from django.db import transaction
 
 
 class RegisterForm(forms.Form):
@@ -16,7 +18,7 @@ class RegisterForm(forms.Form):
         },
         widget=forms.PasswordInput, label='Password'
     )
-    re_password = forms.CharField(
+
         error_messages={
             'required': 'Enter Password'
         },

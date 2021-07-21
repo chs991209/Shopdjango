@@ -1,8 +1,9 @@
 import requests
 from django import forms
+from product.models import Product
 from .models import Order
 from customer.models import Customer
-from product.models import Product
+
 
 
 class RegisterForm(forms.Form):
@@ -30,12 +31,14 @@ def clean(self):
     customer = self.request.sesion.get('customer')
 
     if quantity and product and customer:
+        product = Product.objects.get(pk=product)
         order = Order(
             quantity=quantity,
             product=Product.objects.get(pk=product),
             customer=Customer.objects.get(email=customer)
         )
         order.save()
+        product.stock -= quantity
     else:
         self.add_error('quantity', 'No Data')
         self.add_error('product', 'No Data')
