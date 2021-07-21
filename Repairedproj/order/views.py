@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .forms import RegisterForm
 from django.views.generic.edit import FormView
+from django.views.generic import ListView
+from .models import Order
 # Create your views here.
 
 
@@ -17,3 +19,9 @@ class OrderCreate(FormView):
             'request': self.request
         })
         return kw
+
+
+class OrdertList(ListView):
+    model = Order
+    template_name = 'order.html'
+    context_object_name = 'order_list'
