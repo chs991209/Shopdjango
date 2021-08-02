@@ -21,7 +21,7 @@ class OrderCreate(FormView):
         return kw
 
 
-class OrdertList(ListView):
+class OrderList(ListView):
     model = Order
     template_name = 'order.html'
     context_object_name = 'order_list'
