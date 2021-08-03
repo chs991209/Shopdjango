@@ -19,12 +19,9 @@ def admin_required(function):
             return redirect('/login')
 
         customer = Customer.objects.get(email=customer)
-        if customer.level !='admin':
+        if customer.level != 'admin':
             return redirect('/')
 
         return function(request, *args, **kwargs)
 
     return wrap
-
-
-

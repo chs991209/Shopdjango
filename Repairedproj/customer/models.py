@@ -7,7 +7,7 @@ from django.db import models
 class Customer(models.Model):
     email = models.EmailField()
     password = models.CharField(
-        max_length=64, verbose_name='PASSWORD'
+        max_length=128, verbose_name='PASSWORD'
     )
     level = models.CharField(max_length=8, verbose_name='Grade',
                              choices=(
