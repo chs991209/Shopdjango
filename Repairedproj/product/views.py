@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import FormView
 from django.utils.decorators import method_decorator
-from customer.decorators import login_required, admin_required
+from customer.decorators import admin_required
 from .models import Product
 from .forms import RegisterForm
 from order.forms import RegisterForm as OrderForm

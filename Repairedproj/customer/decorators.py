@@ -11,7 +11,8 @@ def login_required(function):
 
     return wrap
 
-    def admin_required(function):
+
+def admin_required(function):
         def wrap(request, *args, **kwargs):
             customer = request.session.get('customer')
             if customer is None or not customer:
