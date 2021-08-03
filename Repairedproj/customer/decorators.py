@@ -1,6 +1,7 @@
 from django.shortcuts import redirect
 from .models import Customer
 
+
 def login_required(function):
     def wrap(request, *args, **kwargs):
         customer = request.session.get('customer')
@@ -17,6 +18,8 @@ def login_required(function):
                 return redirect('/login')
 
             customer = Customer.objects.get(email=customer)
+            if customer.level !='admin':
+                return redirect('/')
 
             return function(request, *args, **kwargs)
 
