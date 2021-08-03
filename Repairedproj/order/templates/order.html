@@ -22,7 +22,7 @@
                         <a href="">{{ order.product }}</a>
                     </th>
                     <th>{{ order.quantity|intcomma}} 개</th>
-                    <th>{{ order.register_date|date: 'Y=m=d H:i }}</th>
+                    <th>{{ order.registered_date|date:'Y-m-d H:i' }}</th>
                 </tr>
                 {% endfor %}
             </tbody>

@@ -5,9 +5,7 @@ from .models import Order
 from customer.models import Customer
 
 
-
 class RegisterForm(forms.Form):
-
     def __init__(self, request, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.request = request
