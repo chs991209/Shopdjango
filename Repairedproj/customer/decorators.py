@@ -13,18 +13,18 @@ def login_required(function):
 
 
 def admin_required(function):
-        def wrap(request, *args, **kwargs):
-            customer = request.session.get('customer')
-            if customer is None or not customer:
-                return redirect('/login')
+    def wrap(request, *args, **kwargs):
+        customer = request.session.get('customer')
+        if customer is None or not customer:
+            return redirect('/login')
 
-            customer = Customer.objects.get(email=customer)
-            if customer.level !='admin':
-                return redirect('/')
+        customer = Customer.objects.get(email=customer)
+        if customer.level !='admin':
+            return redirect('/')
 
-            return function(request, *args, **kwargs)
+        return function(request, *args, **kwargs)
 
-        return wrap
+    return wrap
 
 
 
