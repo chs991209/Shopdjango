@@ -34,12 +34,6 @@ class RegisterForm(forms.Form):
             if password != re_password:
                 self.add_error('password', 'Password Not Identical')
                 self.add_error('re_password', 'Password Not Identical')
-            else:
-                customer = Customer(
-                    email=email,
-                    password=make_password(password),
-                )
-                customer.save()
 
 
 class LoginForm(forms.Form):
