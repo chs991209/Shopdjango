@@ -26,11 +26,7 @@ def clean(self):
     cleaned_data = super().clean()
     quantity = cleaned_data.get('quantity')
     product = cleaned_data.get('product')
-    customer = self.request.sesion.get('customer')
 
-    if quantity and product and customer:
-        pass
-
-    else:
+    if not (quantity and product):
         self.add_error('quantity', 'No Data')
         self.add_error('product', 'No Data')

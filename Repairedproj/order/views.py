@@ -19,20 +19,20 @@ class OrderCreate(FormView):
 
     def form_valid(self, form):
         with transaction.atomic():
-            product = Product.objects.get(pk=product)
+            product = Product.objects.get(pk=form.data.get('product'))
             order = Order(
-                quantity=quantity,
-                product=Product.objects.get(pk=product),
-                customer=Customer.objects.get(email=customer)
+                quantity=form.data.get('quantity'),
+                product=product,
+                customer=Customer.objects.get(email=self.request.session.get('customer'))
             )
             order.save()
-            product.stock -= quantity
+            product.stock -= int(form.data.get('quantity'))
             product.save()
 
             return super().form_valid(form)
 
     def form_invalid(self, form):
-        return redirect('/product/' + str(form.product))
+        return redirect('/product/' + str(form.data.get('product')))
 
     def get_form_kwargs(self, **kwargs):
         kw = super().get_form_kwargs(**kwargs)
