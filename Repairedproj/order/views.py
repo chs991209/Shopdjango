@@ -5,6 +5,10 @@ from django.views.generic import ListView
 from django.utils.decorators import method_decorator
 from customer.decorators import login_required
 from .models import Order
+from django.db import transaction
+from product.models import Product
+from customer.models import Customer
+from .forms import RegisterForm
 # Create your views here.
 
 
@@ -12,6 +16,20 @@ from .models import Order
 class OrderCreate(FormView):
     form_class = RegisterForm
     success_url = '/product/'
+
+    def form_valid(self, form):
+        with transaction.atomic():
+            product = Product.objects.get(pk=product)
+            order = Order(
+                quantity=quantity,
+                product=Product.objects.get(pk=product),
+                customer=Customer.objects.get(email=customer)
+            )
+            order.save()
+            product.stock -= quantity
+            product.save()
+
+            return super().form_valid(form)
 
     def form_invalid(self, form):
         return redirect('/product/' + str(form.product))

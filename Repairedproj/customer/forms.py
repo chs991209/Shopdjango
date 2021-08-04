@@ -2,7 +2,6 @@ from django import forms
 from .models import Customer
 from django.contrib.auth.hashers import check_password, make_password
 from customer.models import Customer
-from django.db import transaction
 
 
 class RegisterForm(forms.Form):
@@ -64,5 +63,3 @@ class LoginForm(forms.Form):
 
             if not check_password(password, customer.password):
                 self.add_error('password', 'Incorrect Password')
-            else:
-                self.email = customer.email
