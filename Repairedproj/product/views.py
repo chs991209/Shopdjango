@@ -23,6 +23,17 @@ class ProductCreate(FormView):
     form_class = RegisterForm
     success_url = '/product/'
 
+    def form_valid(self, form):
+        product = Product(
+            name=form.data.get('name'),
+            price=form.data.get('price'),
+            description=form.data.get('description'),
+            stock=form.data.get('stock')
+        )
+        product.save()
+
+        return super().form_valid(form)
+
 
 class ProductDetail(DetailView):
     template_name = 'product_detail.html'
@@ -33,3 +44,5 @@ class ProductDetail(DetailView):
         context = super().get_context_data(**kwargs)
         context['form'] = OrderForm(self.request)
         return context
+
+
