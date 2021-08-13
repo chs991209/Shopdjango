@@ -1,7 +1,17 @@
 {% extends "base.html" %}
 {% load humanize %}
 {% block header %}
-    
+    <script>
+        $(document).ready(function () {
+        $.ajax({
+            url: "/api/product",
+            success: function (result) {
+                console.log(result)
+                $("#weather-temp").html("<strong>" + result + "</strong> degrees");
+            }
+        });
+    });
+    </script>
 {% endblock %}
 {% block contents %}
     <div class="row mt-5">
@@ -10,7 +20,7 @@
                 <thead class="thead-light">
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Product Name</th>
+                    <th scope="col">Product_Name</th>
                     <th scope="col">Price</th>
                     <th scope="col">Date</th>
                 </tr>
@@ -23,9 +33,9 @@
                     <th>{{ product.price|intcomma }} $</th>
                     <th>{{ product.registered_date|date:'Y/m/d H:i'}}</th>
                 </tr>
+                {% endfor %}}
             </tbody>
         </table>
     </div>
 </div>
-{% endfor %}
 {% endblock %}
