@@ -5,6 +5,7 @@ from django_quill.fields import QuillField
 
 
 class Product(models.Model):
+    objects = models.Manager
     name = models.CharField(max_length=256, verbose_name='Prod_NAME')
     price = models.IntegerField(verbose_name='Prod_PRICE')
     description = models.TextField(verbose_name='Prod_DESCRIPTION')

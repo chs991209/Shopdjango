@@ -16,8 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from customer.views import index, logout, RegisterView, LoginView
-from product.views import ProductList, ProductCreate, ProductDetail
+from product.views import ProductList, ProductCreate, ProductDetail, ProductListAPI
 from order.views import OrderCreate, OrderList
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,4 +31,6 @@ urlpatterns = [
     path('product/create/', ProductCreate.as_view()),
     path('order/', OrderList.as_view()),
     path('order/create/', OrderCreate.as_view(template_name='order.html')),
+    path('api/product/', ProductListAPI.as_view()),
+    path('api/product/<int:pk>', ProductListAPI.as_view())
 ]
