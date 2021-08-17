@@ -1,7 +1,6 @@
 from django import forms
 from .models import Customer
 from django.contrib.auth.hashers import check_password
-from customer.models import Customer
 
 
 class RegisterForm(forms.Form):

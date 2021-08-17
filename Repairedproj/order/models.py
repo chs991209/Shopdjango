@@ -4,7 +4,7 @@ from django.db import models
 
 
 class Order(models.Model):
-    customer = models.ForeignKey('customer.Customer', on_delete=models.CASCADE, verbose_name='customermodel')
+    customer = models.ForeignKey('customer.Customer', on_delete=models.CASCADE, verbose_name='customer')
     product = models.ForeignKey('product.Product', on_delete=models.CASCADE, verbose_name='Order_Prod_NAME')
     quantity = models.IntegerField(verbose_name='QUANTITY')
     registered_date = models.DateTimeField(auto_now_add=True, verbose_name='REGISTERED_DATE')
