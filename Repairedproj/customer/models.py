@@ -12,10 +12,10 @@ class Customer(models.Model):
     level = models.CharField(max_length=8, verbose_name='Grade',
                              choices=(
                                  ('admin', 'admin'),
-                                 ('customer', 'customer')
+                                 ('user', 'user')
                              ))
     registered_date = models.DateTimeField(auto_now_add=True,
-                                           verbose_name='CUSTOMER_REGISTERED_DATE'
+                                           verbose_name='REGISTERED_DATE'
                                            )
 
     def __str__(self):
@@ -23,5 +23,5 @@ class Customer(models.Model):
 
     class Meta:
         db_table = 'NewProject_customer'
-        verbose_name = 'CUSTOMER'
-        verbose_name_plural = 'CUSTOMER'
+        verbose_name = 'customerclass'
+        verbose_name_plural = 'customerclass'

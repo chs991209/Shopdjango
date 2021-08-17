@@ -4,8 +4,8 @@ from .models import Customer
 
 def login_required(function):
     def wrap(request, *args, **kwargs):
-        customer = request.session.get('customer')
-        if customer is None or not customer:
+        user = request.session.get('user')
+        if user is None or not user:
             return redirect('/login')
         return function(request, *args, **kwargs)
 
@@ -14,12 +14,12 @@ def login_required(function):
 
 def admin_required(function):
     def wrap(request, *args, **kwargs):
-        customer = request.session.get('customer')
-        if customer is None or not customer:
+        user = request.session.get('user')
+        if user is None or not user:
             return redirect('/login')
 
-        customer = Customer.objects.get(email=customer)
-        if customer.level != 'admin':
+        user = Customer.objects.get(email=user)
+        if user.level != 'admin':
             return redirect('/')
 
         return function(request, *args, **kwargs)

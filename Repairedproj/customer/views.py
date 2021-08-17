@@ -9,7 +9,7 @@ from .models import Customer
 
 
 def index(request):
-    return render(request, 'index.html', {'email': request.session.get('customer')})
+    return render(request, 'index.html', {'email': request.session.get('user')})
 
 
 class RegisterView(FormView):
@@ -20,7 +20,8 @@ class RegisterView(FormView):
     def form_valid(self, form):
         customer = Customer(
             email=form.data.get('email'),
-            password=make_password(form.data.get('password'))
+            password=make_password(form.data.get('password')),
+            level='user'
         )
         customer.save()
 
@@ -33,13 +34,13 @@ class LoginView(FormView):
     success_url = '/'
 
     def form_valid(self, form):
-        self.request.session['customer'] = form.data.get('email')
+        self.request.session['user'] = form.data.get('email')
 
         return super().form_valid(form)
 
 
 def logout(request):
-    if 'customer' in request.session:
-        del(request.session['customer'])
+    if 'user' in request.session:
+        del(request.session['user'])
 
     return redirect('/')

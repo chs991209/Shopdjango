@@ -15,12 +15,8 @@
                <tbody class="text-dark">
                 {% for order in oder_list %}
                 <tr>
-                    <th scope="row">
-                        {{ order.id }}
-                    </th>
-                    <th>
-                        <a href="">{{ order.product }}</a>
-                    </th>
+                    <th scope="row">{{ order.id }}</th>
+                    <th>{{ order.product }}</th>
                     <th>{{ order.quantity|intcomma}} 개</th>
                     <th>{{ order.registered_date|date:'Y-m-d H:i' }}</th>
                 </tr>

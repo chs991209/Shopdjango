@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from .forms import RegisterForm
 from django.views.generic.edit import FormView
 from django.views.generic import ListView
 from django.utils.decorators import method_decorator
@@ -23,13 +22,13 @@ class OrderCreate(FormView):
             order = Order(
                 quantity=form.data.get('quantity'),
                 product=product,
-                customer=Customer.objects.get(email=self.request.session.get('customer'))
+                customer=Customer.objects.get(email=self.request.session.get('user'))
             )
             order.save()
             product.stock -= int(form.data.get('quantity'))
             product.save()
 
-            return super().form_valid(form)
+        return super().form_valid(form)
 
     def form_invalid(self, form):
         return redirect('/product/' + str(form.data.get('product')))

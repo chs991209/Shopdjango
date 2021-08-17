@@ -4,10 +4,10 @@ from django.db import models
 
 
 class Order(models.Model):
-    customer = models.ForeignKey('customer.Customer', on_delete=models.CASCADE, verbose_name='customer')
+    customer = models.ForeignKey('customer.Customer', on_delete=models.CASCADE, verbose_name='customermodel')
     product = models.ForeignKey('product.Product', on_delete=models.CASCADE, verbose_name='Order_Prod_NAME')
     quantity = models.IntegerField(verbose_name='QUANTITY')
-    registered_date = models.DateTimeField(auto_now_add=True, verbose_name='Ordered_DATE')
+    registered_date = models.DateTimeField(auto_now_add=True, verbose_name='REGISTERED_DATE')
 
     def __str__(self):
         return str(self.customer) + ' ' + str(self.product)

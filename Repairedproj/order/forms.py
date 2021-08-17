@@ -21,12 +21,11 @@ class RegisterForm(forms.Form):
         }, label='description', widget=forms.HiddenInput
     )
 
+    def clean(self):
+        cleaned_data = super().clean()
+        quantity = cleaned_data.get('quantity')
+        product = cleaned_data.get('product')
 
-def clean(self):
-    cleaned_data = super().clean()
-    quantity = cleaned_data.get('quantity')
-    product = cleaned_data.get('product')
-
-    if not (quantity and product):
-        self.add_error('quantity', 'No Data')
-        self.add_error('product', 'No Data')
+        if not (quantity and product):
+            self.add_error('quantity', 'No Data')
+            self.add_error('product', 'No Data')
