@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% load humanize %}
 {% block contents %}
-    <div class="row mt-5">
-        <div class="col-12">
-            <div class="card" style="width: 100%"></div>
-            <div class="card-body">{{ product.name }}</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <div class="card" style="width: 100%">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+            <div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
                     <form method="POST" action="/order/create/">
@@ -15,8 +17,8 @@
                             <label for="{{  field.id_for_label  }}">{{ field.label }}</label>
                             {% endifnotequal %}
                             <input type="{{ field.field.widget.input_type }}" class="form-control" id = "{{  field.id_for_label  }}"
-                                   placeholder="{{   field.label }}" name="{{   field.name  }}"
-                                   value="{% ifequal field.name 'product' %}{{product.id}}{% endifequal %}"/>
+                                placeholder="{{   field.label }}" name="{{   field.name  }}"
+                                value="{% ifequal field.name 'product' %}{{product.id}}{% endifequal %}"/>
                         </div>
                         {% if field.errors %}
                         <span style="color: red">{{  field.errors  }}</span>
@@ -32,9 +34,9 @@
             </ul>
         </div>
     </div>
-        <div class="row">
-            <div class="col-12">
-                <a href="/product/">목록으로</a>
-            </div>
+    <div class="row">
+        <div class="col-12">
+            <a href="/product/">목록으로</a>
         </div>
-{% endblock %}
+    </div>
+    {% endblock %}

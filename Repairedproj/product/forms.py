@@ -1,6 +1,5 @@
 from django import forms
 from .models import Product
-from django.contrib.auth.hashers import make_password, check_password
 
 
 class RegisterForm(forms.Form):
@@ -8,7 +7,7 @@ class RegisterForm(forms.Form):
         error_messages={
             'required': 'Enter Product Name'
         },
-        label='Product Name'
+        max_length=64, label='Product Name'
     )
     price = forms.IntegerField(
         error_messages={
@@ -22,7 +21,7 @@ class RegisterForm(forms.Form):
     )
     stock = forms.IntegerField(
         error_messages={
-                             'required': 'Enter Product Stock'
+            'required': 'Enter Product Stock'
         }, label='Stock'
     )
 

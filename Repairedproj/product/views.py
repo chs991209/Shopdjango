@@ -1,4 +1,3 @@
-from order.models import Order
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import FormView
@@ -29,7 +28,7 @@ class ProductDetailAPI(generics.GenericAPIView, mixins.RetrieveModelMixin):
     serializer_class = ProductSerializer
 
     def get_queryset(self):
-        return Product.obejects.all()
+        return Product.objects.all()
 
     def get(self, request, *args, **kwargs):
         return self.retrieve(request, *args, **kwargs)

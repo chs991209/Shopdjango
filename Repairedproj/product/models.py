@@ -1,11 +1,9 @@
-from enum import auto
 from django.db import models
-from django_quill.fields import QuillField
+
 # Create your models here.
 
 
 class Product(models.Model):
-    objects = models.Manager
     name = models.CharField(max_length=256, verbose_name='Prod_NAME')
     price = models.IntegerField(verbose_name='Prod_PRICE')
     description = models.TextField(verbose_name='Prod_DESCRIPTION')
@@ -20,6 +18,3 @@ class Product(models.Model):
         verbose_name = 'PRODUCT'
         verbose_name_plural = 'PRODUCT'
 
-
-class QuillPost(models.Model):
-    content = QuillField()
