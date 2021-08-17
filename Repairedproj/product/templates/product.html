@@ -8,7 +8,7 @@
             success: function (result) {
                 $("#product-" + id).popover({
                     html: true,
-                    content: result[id].name + "<br/>" + result[id].price
+                    content: result.name + "<br/>" + result.price
                 }).popover('show');
             }
         });
