@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'order',
     'product',
     'django_summernote',
-    'django_quill'
 ]
 
 MIDDLEWARE = [
