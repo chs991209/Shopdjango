@@ -5,6 +5,29 @@
       <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Repairedproj" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/0/1" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/0/4" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/0/b" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/1/6" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/1/d" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/8/a" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/2" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/3" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/4" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/5" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/6" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/7" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/9" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/a" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/b" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/c" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/d" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/e" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/f" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/dataSources" />
+      <excludeFolder url="file://$MODULE_DIR$/lib/python3.9/site-packages/djangorestframework-3.12.4.dist-info" />
+      <excludeFolder url="file://$MODULE_DIR$/lib/python3.9/site-packages/rest_framework" />
+      <excludeFolder url="file://$MODULE_DIR$/include" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.9 (VirtualDjango)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
