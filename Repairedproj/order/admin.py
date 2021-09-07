@@ -17,7 +17,7 @@ class OrderAdmin(admin.ModelAdmin):
         if obj.status == 'PAID':
             return format_html(f'<span style="color:green">{obj.status}</b>')
         if obj.status == 'PROCESSING':
-            return format_html(f'<span style="color:brown">{obj.status}</b>')
+            return format_html(f'<span style="color:brown">{obj.status}</b>') #f>>바로 입력
 
         return obj.status
 
