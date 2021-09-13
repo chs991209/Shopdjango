@@ -22,7 +22,6 @@ from order.views import OrderCreate, OrderList
 
 urlpatterns = [
     path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
-    path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')), # Django JET URLS
     path('admin/', admin.site.urls),
     path('', index),
     path('register/', RegisterView.as_view()),
