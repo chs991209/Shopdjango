@@ -14,13 +14,15 @@ class ProductAdmin(admin.ModelAdmin):
 
 
     def styled_stock(self, obj):
-        if obj.stock >= 1000:
-            return format_html(f'<span style="color:blue">{obj.stock}</P>')
-        elif obj.stock <= 30:
-            return format_html(f'<span style="color:red">{obj.stock}</P>')
+        stock = obj.stock
+        if stock >= 1000:
+            stock = intcomma(stock)
+            return format_html(f'<b><span style="color:blue">{stock} 개</b>')
+        elif stock <= 30:
+            stock = intcomma(stock)
+            return format_html(f'<b><span style="color:red">{stock} 개</b>')
 
-        else:
-            return obj.stock
+        return format_html (f'<b>{intcomma(stock)} 개</b>')
 
     price_format.short_description = 'PRICE'
 
