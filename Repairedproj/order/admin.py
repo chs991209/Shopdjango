@@ -43,6 +43,8 @@ class OrderAdmin(admin.ModelAdmin):
 
     change_list_template = 'admin/order_change_list.html'
 
+    change_form_template = 'admin/order_change_form.html'
+
     actions = [
         refund
     ]
