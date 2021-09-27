@@ -23,5 +23,5 @@ class Order(models.Model):
 
     class Meta:
         db_table = 'NewProject_order'
-        verbose_name = 'Order'
-        verbose_name_plural = 'Order'
+        verbose_name = 'OrderList'
+        verbose_name_plural = 'OrderList'

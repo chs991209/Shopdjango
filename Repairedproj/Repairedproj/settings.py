@@ -30,6 +30,13 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+JET = {
+    'SITE_HEADER': 'Django BackOffice',
+    'SITE_TITLE': 'Django BackOffice',
+    'INDEX_TITLE': 'Django Admin',
+    'MENU_TITLE': 'Test'
+}
+
 INSTALLED_APPS = [
     'jet',
     'django.contrib.admin',
@@ -40,9 +47,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'rest_framework',
-    'customer',
-    'order',
-    'product',
+    'customer.apps.CustomerConfig',
+    'order.apps.OrderConfig',
+    'product.apps.ProductConfig',
     'django_summernote',
 ]
 
@@ -110,9 +117,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ko-kr'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 

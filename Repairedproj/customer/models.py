@@ -23,5 +23,5 @@ class Customer(models.Model):
 
     class Meta:
         db_table = 'NewProject_customer'
-        verbose_name = 'customer'
-        verbose_name_plural = 'customer'
+        verbose_name = 'Users'
+        verbose_name_plural = 'Users'
