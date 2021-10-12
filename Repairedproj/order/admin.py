@@ -2,7 +2,9 @@ from django.contrib import admin
 from django.db import transaction
 from django.db.models import Q
 from django.contrib.contenttypes.models import ContentType
+from django.template.response import TemplateResponse
 from django.contrib.admin.models import LogEntry, CHANGE
+from django.urls import path
 from .models import Order
 from django.utils.html import format_html
 
@@ -94,6 +96,10 @@ class OrderAdmin(admin.ModelAdmin):
         extra_context['show_save_and_add_another'] = False
         extra_context['show_save_and_continue'] = False
         return super().changeform_view(request, object_id, form_url, extra_context)
+
+    def date_view(self, request):
+        context = dict()
+        return TemplateResponse(request, 'admin/order_date_view.html', context)
 
     styled_status.short_description = 'STATUS'
 
