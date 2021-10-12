@@ -97,8 +97,18 @@ class OrderAdmin(admin.ModelAdmin):
         extra_context['show_save_and_continue'] = False
         return super().changeform_view(request, object_id, form_url, extra_context)
 
+    def get_urls(self):
+        urls = super().get_urls()
+        date_urls = [
+            path('date_view/', self.date_view)
+        ]
+        return date_urls + urls
+
     def date_view(self, request):
-        context = dict()
+        context = dict(
+            self.admin_site.each_context(request),
+        )
+
         return TemplateResponse(request, 'admin/order_date_view.html', context)
 
     styled_status.short_description = 'STATUS'
