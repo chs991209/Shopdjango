@@ -15,7 +15,6 @@ def refund(modeladmin, request, queryset):
     with transaction.atomic():
 
         qs = queryset.filter(~Q(status='환불'))
-
         ct = ContentType.objects.get_for_model(queryset.model)
 
         for obj in qs:
@@ -29,7 +28,6 @@ def refund(modeladmin, request, queryset):
                 object_repr='주문 환불',
                 action_flag=CHANGE,
                 change_message='주문 환불'
-
             )
         qs.update(status='환불')
 
@@ -70,13 +68,31 @@ class OrderAdmin(admin.ModelAdmin):
         extra_context = {'title': 'OrderList'}
 
         if request.method == 'POST':
-            print(request.POST)
+            obj_id = request.POST.get('obj_id')
+            if obj_id:
+                qs = Order.objects.filter(pk=obj_id)
+                ct = ContentType.objects.get_for_model(qs.model)
+                for obj in qs:
+                    obj.product.stock += obj.quantity
+                    obj.product.save()
+
+                    LogEntry.objects.log_action(
+                        user_id=request.user.id,
+                        content_type_id=ct.pk,
+                        object_id=obj.pk,
+                        object_repr='주문 환불',
+                        action_flag=CHANGE,
+                        change_message='주문 환불'
+                    )
+                qs.update(status='환불')
 
         return super().changelist_view(request, extra_context)
 
     def changeform_view(self, request, object_id=None, form_url='', extra_context=None):
         order = Order.objects.get(pk=object_id)
-        extra_context = {'title': f'{order.customer.email} 주문 수정하기'}
+        extra_context = { 'title': f"'{order.customer.email}'의 '{order.product.name}' 주문 수정하기'"}
+        extra_context['show_save_and_add_another'] = False
+        extra_context['show_save_and_continue'] = False
         return super().changeform_view(request, object_id, form_url, extra_context)
 
     styled_status.short_description = 'STATUS'
