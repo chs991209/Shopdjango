@@ -13,8 +13,26 @@ import os
 import json
 from pathlib import Path
 
+# secrets.json Error 발생시 처리하기 위해 import 합니다.
+from django.core.exceptions import ImproperlyConfigured
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Bring json file 
+secret_file = os.path.join(BASE_DIR, 'secrets.json')
+
+# json 파일을 읽어 secret에 할당합니다.
+with open(secret_file) as f:
+	secrets = json.loads(f.read())
+
+# json 파일에 key를 확인하고 key가 없으면 KeyError를 출력합니다.
+def get_secret(setting, secrets=secrets):
+    try:
+        return secrets[setting]
+    except KeyError:
+        error_msg = "Set the {0} enviroment variable".format(setting)
+        raise ImproperlyConfigured(error_msg)
 
 
 # Quick-start development settings - unsuitable for production
